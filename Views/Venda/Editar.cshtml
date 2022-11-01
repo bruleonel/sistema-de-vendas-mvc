@@ -1,0 +1,58 @@
+@model tech_test_payment_api.Models.Venda
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1>Editar</h1>
+
+<hr/>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Criar">
+            <div class="form-group">
+                <label asp-for="Produto" class="control-label"></label>
+                <input asp-for="Produto" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Vendedor" class="control-label"></label>
+                <input asp-for="Vendedor" class="form-control" />
+            </div>
+
+             <div class="form-group">
+                <label asp-for="Data" class="control-label"></label>
+                <input type="date" asp-for="Data" class="form-control" />>
+              
+            </div>
+            
+            <html>
+                <head>
+                    <title>Status</title>
+                </head>
+                <body>
+                    <h1>Status</h1>
+                    <form method="post" action="cadastrar status">
+                        <select name="status">
+                            <option value="aprovado">Pagamento aprovado</option>
+                            <option value="enviado">Enviado para transportadora</option>
+                            <option value="entregue">Entregue</option>
+                            <option value="cancelado">Cancelado</option>
+                        </select>
+                        <input type="submit" value="Enviar" />
+                        <input type="reset" value="Cancelar" />
+                    </form>
+                </body>
+            </html>
+            <br>
+            <div class="form-group">
+                <input type="submit" value="Editar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+</hr>
+<br>
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>

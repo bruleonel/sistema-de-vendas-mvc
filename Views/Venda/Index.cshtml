@@ -1,0 +1,69 @@
+@model IEnumerable<tech_test_payment_api.Models.Venda>
+
+@{
+    ViewData["Title"] = "Listagem de Vendas";
+}
+
+<h2> Vendas </h2>
+
+<p>
+    <a asp-action="Nova venda">Nova venda</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Produto)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Vendedor)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Data)
+            </th>
+
+             <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.Id)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(model => item.Produto)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(model => item.Vendedor)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(model => item.Data)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(model => item.Status)
+                </td>
+
+                <td>
+                    <a asp-action="Editar" asp-route-id="@item.Id">Editar</a>
+                    <a asp-action="Editar" asp-route-id="@item.Id">Detalhes</a>
+                    <a asp-action="Editar" asp-route-id="@item.Id">Deletar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
